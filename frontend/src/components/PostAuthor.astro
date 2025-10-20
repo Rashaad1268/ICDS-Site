@@ -1,0 +1,21 @@
+---
+interface Props {
+  author?: string;
+  authorDesignation?: string;
+  authorImage?: string;
+}
+
+const { author, authorDesignation, authorImage } = Astro.props;
+---
+
+<div class="flex gap-2">
+  <img
+    class="h-16 w-16 rounded-full object-cover"
+    src={authorImage}
+    alt=`Image of ${author}`
+  />
+  <div>
+    <h4>{author}</h4>
+    <h6>{authorDesignation}</h6>
+  </div>
+</div>
