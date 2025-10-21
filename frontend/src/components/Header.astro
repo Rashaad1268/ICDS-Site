@@ -4,102 +4,108 @@ import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header>
-  <nav class="pt-4">
-    <a href="/"
-      ><img
-        width="90px"
-        class="object-contain"
-        src="/icds_logo.png"
-        alt="logo"
-      /></a
-    >
-    <div class="internal-links">
-      <!-- <HeaderLink href="/">Home</HeaderLink>
+    <nav class="py-4">
+        <a href="/"
+            ><img
+                width="90px"
+                class="object-contain"
+                src="/icds_logo.png"
+                alt="logo"
+            /></a
+        >
+        <div class="internal-links">
+            <!-- <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink> -->
-    </div>
-    <div class="social-links">
-      <a href={twitter_link} target="_blank">
-        <span class="sr-only">Follow DSSC MUN on Twitter</span>
-        <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-          ><path
-            fill="currentColor"
-            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-          ></path></svg
-        >
-      </a>
-      <a href={instagram_link} target="_blank">
-        <span class="sr-only">Follow DSSC MUN on Instagram</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          width="32"
-          height="32"
-          viewBox="0 0 448 512"
-          ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-          <path
-            fill="currentColor"
-            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-          ></path></svg
-        >
-      </a>
-      <a href={youtube_link} target="_blank">
-        <span class="sr-only">Follow DSSC MUN on YouTube</span>
+        </div>
+        <div class="social-links">
+            <a href={twitter_link} target="_blank">
+                <span class="sr-only">Follow DSSC MUN on Twitter</span>
+                <svg
+                    viewBox="0 0 16 16"
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    ><path
+                        fill="currentColor"
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                    ></path></svg
+                >
+            </a>
+            <a href={instagram_link} target="_blank">
+                <span class="sr-only">Follow DSSC MUN on Instagram</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 448 512"
+                    ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        fill="currentColor"
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    ></path></svg
+                >
+            </a>
+            <a href={youtube_link} target="_blank">
+                <span class="sr-only">Follow DSSC MUN on YouTube</span>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          width="32"
-          height="32"
-          viewBox="0 0 576 512"
-          ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-          <path
-            fill="currentColor"
-            d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"
-          ></path></svg
-        >
-      </a>
-    </div>
-  </nav>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 576 512"
+                    ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        fill="currentColor"
+                        d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"
+                    ></path></svg
+                >
+            </a>
+        </div>
+    </nav>
 </header>
 <style>
-  header {
-    @apply bg-neutral-900 shadow-lg sticky top-0 left-0 z-[99999];
-    margin: 0;
-    padding: 0 1em;
-  }
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
+    @reference "../styles/global.css";
 
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-height: var(--navbar-height);
-  }
-  nav a {
-    @apply text-stone-200;
-    padding: 0em 0.5em;
-    border-bottom: 4px solid transparent;
-    text-decoration: none;
-  }
-  nav a.active {
-    @apply border-b-amber-600;
-    text-decoration: none;
-  }
-  .social-links,
-  .social-links a {
-    display: flex;
-  }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
+    header {
+        @apply bg-neutral-900 shadow-lg sticky top-0 left-0 z-[9000];
+        margin: 0;
+        padding: 0 1em;
     }
-  }
+    h2 {
+        margin: 0;
+        font-size: 1em;
+    }
+
+    h2 a,
+    h2 a.active {
+        text-decoration: none;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-height: var(--navbar-height);
+    }
+    nav a {
+        @apply text-stone-200;
+        padding: 0em 0.5em;
+        border-bottom: 4px solid transparent;
+        text-decoration: none;
+    }
+    nav a.active {
+        @apply border-b-amber-600;
+        text-decoration: none;
+    }
+    .social-links,
+    .social-links a {
+        display: flex;
+    }
+    @media (max-width: 720px) {
+        .social-links {
+            display: none;
+        }
+    }
 </style>
