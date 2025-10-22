@@ -33,7 +33,7 @@
         const data = await res.json();
         alert(`✅ Registration successful for ${form.name}`);
 
-        // Optionally reset form
+        // Reset form
         form = {
           name: "",
           contact: "",
@@ -58,74 +58,78 @@
   <button
     on:click={() => showForm = true}
     disabled={!selectedSeat}
-    class="px-6 py-3 bg-amber-400 text-black font-semibold rounded-lg shadow-lg hover:bg-amber-400 transition-all duration-200 active:scale-95 disabled:opacity-50"
+    class="px-4 sm:px-6 py-2 sm:py-3 bg-amber-400 text-black font-semibold text-sm sm:text-base rounded-lg shadow-lg hover:bg-amber-500 transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
   >
-    Register Selected Seats
+    Register Seat
   </button>
 </div>
 
 {#if showForm}
-  <div class="fixed inset-0 bg-black/70 flex items-center justify-center z-[9999]">
-    <div class="bg-neutral-950 border border-gray-800 rounded-2xl p-8 w-full max-w-lg shadow-2xl relative">
+  <div class="fixed inset-0 bg-black/70 flex items-center justify-center z-[9999] p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-neutral-950 border border-gray-800 rounded-2xl p-4 sm:p-6 md:p-8 w-full max-w-lg shadow-2xl relative my-auto">
       <!-- Close button -->
       <button
-        class="absolute top-3 right-4 text-gray-500 hover:text-amber-400 text-2xl"
+        class="absolute top-2 right-3 sm:top-3 sm:right-4 text-gray-500 hover:text-amber-400 text-2xl sm:text-3xl z-10"
         on:click={() => showForm = false}
+        aria-label="Close"
       >
         &times;
       </button>
 
       <!-- Title -->
-      <h2 class="text-2xl font-bold text-amber-400 text-center mb-2">
+      <h2 class="text-xl sm:text-2xl font-bold text-amber-400 text-center mb-1 sm:mb-2 pr-8">
         Register for Seat {selectedSeat}
       </h2>
-      <p class="text-gray-400 text-center mb-8 text-sm">
+      <p class="text-gray-400 text-center mb-4 sm:mb-6 md:mb-8 text-xs sm:text-sm">
         Please fill in your details to complete the registration.
       </p>
 
       <!-- Form -->
-      <form on:submit|preventDefault={submitForm} class="space-y-5">
+      <form on:submit|preventDefault={submitForm} class="space-y-3 sm:space-y-4 md:space-y-5">
         <!-- Name -->
         <div>
-          <label class="block text-gray-300 mb-1 text-sm font-medium">Full Name</label>
+          <label class="block text-gray-300 mb-1 text-xs sm:text-sm font-medium">Full Name</label>
           <input
             type="text"
             bind:value={form.name}
             required
-            class="w-full p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-gray-100 focus:border-amber-400 focus:ring-amber-400 outline-none transition-all duration-200"
+            placeholder="Enter your full name"
+            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           />
         </div>
 
         <!-- Contact -->
         <div>
-          <label class="block text-gray-300 mb-1 text-sm font-medium">Contact Number</label>
+          <label class="block text-gray-300 mb-1 text-xs sm:text-sm font-medium">Contact Number</label>
           <input
             type="tel"
             bind:value={form.contact}
             required
             pattern="[0-9+ ]+"
-            class="w-full p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-gray-100 focus:border-amber-400 outline-none transition-all duration-200"
+            placeholder="+94 XX XXX XXXX"
+            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           />
         </div>
 
         <!-- Email -->
         <div>
-          <label class="block text-gray-300 mb-1 text-sm font-medium">Email</label>
+          <label class="block text-gray-300 mb-1 text-xs sm:text-sm font-medium">Email</label>
           <input
             type="email"
             bind:value={form.email}
             required
-            class="w-full p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-gray-100 focus:border-amber-400 outline-none transition-all duration-200"
+            placeholder="your.email@example.com"
+            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           />
         </div>
 
         <!-- Affiliation -->
         <div>
-          <label class="block text-gray-300 mb-1 text-sm font-medium">Affiliation</label>
+          <label class="block text-gray-300 mb-1 text-xs sm:text-sm font-medium">Affiliation</label>
           <select
             bind:value={form.affiliation}
             required
-            class="w-full p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-gray-100 focus:border-amber-400 outline-none transition-all duration-200"
+            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           >
             <option value="" disabled selected>Select your affiliation</option>
             <option>Interact</option>
@@ -141,21 +145,24 @@
 
         <!-- Club (optional) -->
         <div>
-          <label class="block text-gray-300 mb-1 text-sm font-medium">Name of Relevant Club (optional)</label>
+          <label class="block text-gray-300 mb-1 text-xs sm:text-sm font-medium">
+            Name of Relevant Club <span class="text-gray-500 text-xs">(optional)</span>
+          </label>
           <input
             type="text"
             bind:value={form.club}
-            class="w-full p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-gray-100 focus:border-amber-400 outline-none transition-all duration-200"
+            placeholder="e.g., Interact Club of..."
+            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           />
         </div>
 
         <!-- Food Preference -->
         <div>
-          <label class="block text-gray-300 mb-1 text-sm font-medium">Food Preference</label>
+          <label class="block text-gray-300 mb-1 text-xs sm:text-sm font-medium">Food Preference</label>
           <select
             bind:value={form.food}
             required
-            class="w-full p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-gray-100 focus:border-amber-400 outline-none transition-all duration-200"
+            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           >
             <option value="" disabled selected>Select preference</option>
             <option>Vegetarian</option>
@@ -164,10 +171,10 @@
         </div>
 
         <!-- Submit -->
-        <div class="pt-4 text-center">
+        <div class="pt-2 sm:pt-4 text-center">
           <button
             type="submit"
-            class="w-full bg-amber-400 hover:bg-amber-300 text-black font-semibold py-2.5 rounded-lg transition-all duration-200 active:scale-95"
+            class="w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold py-2 sm:py-2.5 text-sm sm:text-base rounded-lg transition-all duration-200 active:scale-95 shadow-lg"
           >
             Submit Registration
           </button>
