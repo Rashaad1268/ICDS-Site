@@ -1,3 +1,5 @@
+export const prerender = false;
+
 import type { APIRoute } from 'astro';
 import { google } from 'googleapis';
 
@@ -48,8 +50,6 @@ export const GET: APIRoute = async () => {
         return isReserved === 'TRUE' || isReserved === 'true' || isReserved === true;
       })
       .map(row => parseInt(row[0])); // Get seat_id from column A
-
-    console.log('Reserved seats:', reservedSeats);
 
     return new Response(JSON.stringify({ 
       reservedSeats,
