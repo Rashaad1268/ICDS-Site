@@ -43,6 +43,7 @@
           food: ""
         };
         showForm = false;
+        document.location.reload();
       } else {
         const error = await res.text();
         alert("❌ Failed to register: " + error);
@@ -94,7 +95,7 @@
             bind:value={form.name}
             required
             placeholder="Enter your full name"
-            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
+            class="w-full p-2 sm:p-2.5 placeholder:text-gray-400 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           />
         </div>
 
@@ -106,8 +107,8 @@
             bind:value={form.contact}
             required
             pattern="[0-9+ ]+"
-            placeholder="+94 XX XXX XXXX"
-            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
+            placeholder="071 234 5678"
+            class="w-full p-2 sm:p-2.5 placeholder:text-gray-400 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           />
         </div>
 
@@ -118,8 +119,7 @@
             type="email"
             bind:value={form.email}
             required
-            placeholder="your.email@example.com"
-            class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
+            class="w-full p-2 sm:p-2.5 placeholder:text-gray-400 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           />
         </div>
 
@@ -151,7 +151,6 @@
           <input
             type="text"
             bind:value={form.club}
-            placeholder="e.g., Interact Club of..."
             class="w-full p-2 sm:p-2.5 bg-gray-900 border border-gray-700 rounded-lg text-sm sm:text-base text-gray-100 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 outline-none transition-all duration-200"
           />
         </div>
