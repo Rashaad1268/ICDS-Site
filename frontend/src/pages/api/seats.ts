@@ -15,6 +15,13 @@ export const GET: APIRoute = async () => {
     const SHEET_ID = import.meta.env.GOOGLE_SHEET_ID;
     const RANGE = 'Sheet1!A2:B'; // A2:B to skip header row
 
+    const noCacheHeaders = {
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      Pragma: 'no-cache',
+      Expires: '0',
+      'Content-Type': 'application/json'
+    };
+
     // Fetch data from Google Sheets
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SHEET_ID,
@@ -50,7 +57,7 @@ export const GET: APIRoute = async () => {
       count: reservedSeats.length
     }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' }
+      headers: noCacheHeaders,
     });
 
   } catch (error) {
