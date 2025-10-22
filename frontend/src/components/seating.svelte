@@ -227,7 +227,7 @@
             "w-7 h-7 m-0.5 rounded cursor-pointer transition-all duration-200 active:scale-95 border flex items-center justify-center text-xs font-medium";
         switch (status) {
             case "available":
-                return `${base} bg-gray-800 hover:bg-amber-100 border-amber-500/30 hover:border-amber-500 text-white`;
+                return `${base} bg-gray-800 hover:bg-amber-300 hover:text-black border-amber-500/30 hover:border-amber-500 text-white`;
             case "selected":
                 return `${base} bg-amber-400 hover:bg-amber-500 border-amber-400 shadow-lg shadow-amber-500/50 text-black`;
             case "reserved":
@@ -246,7 +246,7 @@
     ).length;
 </script>
 
-<div class="p-8 bg-black min-h-screen">
+<div class="p-8 bg-black min-h-screen mb-32">
     {#if isLoading}
         <div class="flex flex-col items-center justify-center min-h-screen gap-4">
             <div class="text-amber-500 text-2xl animate-pulse">Loading seat availability...</div>
@@ -265,7 +265,7 @@
                 <button
                     class={`px-8 py-3 rounded-lg font-semibold transition-all ${
                         currentFloor === 1
-                            ? "bg-amber-500 text-black shadow-lg shadow-amber-500/50"
+                            ? "gold-bg text-black shadow-lg shadow-amber-500/50"
                             : "bg-gray-800 text-amber-400 border border-amber-500/30 hover:bg-gray-700"
                     }`}
                     on:click={() => (currentFloor = 1)}
@@ -275,7 +275,7 @@
                 <button
                     class={`px-8 py-3 rounded-lg font-semibold transition-all ${
                         currentFloor === 2
-                            ? "bg-amber-500 text-black shadow-lg shadow-amber-500/50"
+                            ? "gold-bg text-black shadow-lg shadow-amber-500/50"
                             : "bg-gray-800 text-amber-400 border border-amber-500/30 hover:bg-gray-700"
                     }`}
                     on:click={() => (currentFloor = 2)}
@@ -284,7 +284,7 @@
                 </button>
             </div>
 
-            <h1 class="text-4xl font-bold text-center mb-12 text-amber-500">
+            <h1 class="text-4xl font-bold text-center mb-12 gold-text">
                 Floor {currentFloor} - Seat Reservation
             </h1>
 
@@ -448,9 +448,6 @@
                 <div class="flex justify-between items-start gap-8 mb-8">
                     <!-- Left Section -->
                     <div class="flex-1">
-                        <h2 class="text-lg font-semibold text-center mb-4 text-amber-400">
-                            Left Side
-                        </h2>
                         <div class="flex flex-col items-center space-y-1">
                             {#each layout.floor2.left as block}
                                 <div class="flex flex-col">
@@ -475,9 +472,6 @@
 
                     <!-- Center Section -->
                     <div class="flex-1">
-                        <h2 class="text-lg font-semibold text-center mb-4 text-amber-400">
-                            Center
-                        </h2>
                         <div class="flex flex-col items-center space-y-1">
                             {#each layout.floor2.center as block}
                                 <div class="flex flex-col">
@@ -502,9 +496,6 @@
 
                     <!-- Right Section -->
                     <div class="flex-1">
-                        <h2 class="text-lg font-semibold text-center mb-4 text-amber-400">
-                            Right Side
-                        </h2>
                         <div class="flex flex-col items-center space-y-1">
                             {#each layout.floor2.right as block}
                                 <div class="flex flex-col">
@@ -530,7 +521,7 @@
             {/if}
 
             <!-- Legend and Info -->
-            <div class="bg-gray-900 p-6 rounded-lg border border-amber-500/30 shadow-xl">
+            <div class="bg-zinc-900 p-6 rounded-lg border border-amber-500/30 shadow-xl">
                 <div class="flex justify-between items-center">
                     <div class="flex gap-6">
                         <div class="flex items-center gap-2">
@@ -560,12 +551,6 @@
                         <RegistrationForm selectedSeat={selectedSeatNumber} />
                     </div>
                 </div>
-            </div>
-
-            <!-- Total Seat Count Display -->
-            <div class="text-center mt-4 text-amber-400/70 text-sm">
-                Total Venue Capacity: {seatCounts.total} seats 
-                ({seatCounts.total - reservedSeatsCount} available, {reservedSeatsCount} specially reserved)
             </div>
         </div>
     {/if}

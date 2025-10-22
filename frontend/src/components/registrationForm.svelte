@@ -54,7 +54,7 @@
   }
 </script>
 
-<div class="text-center mt-6">
+<div class="text-center">
   <button
     on:click={() => showForm = true}
     disabled={!selectedSeat}

@@ -36,25 +36,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <Header title={SITE_TITLE} />
         <main>
             <section
-                class="flex flex-col items-center justify-center gap-8"
+                class="flex flex-col items-center justify-center gap-8 pt-20"
                 style="margin-top: calc(var(--navbar-height) - 50px)"
             >
                 <img
-                    src="/icds_logo.png"
+                    class="fade-in-side text-center py-10"
+                    style="--delay: 1500ms;"
+                    src="/installation_poster.png"
                     alt="Logo"
-                    height="340px"
-                    width="340px"
+                    height="400px"
+                    width="400px"
                     class="w-[500px] object-contain my-10 mb-16"
                 />
 
-                <div class="fade-in-side text-center" style="--delay: 1500ms;">
+                <!-- <div class="fade-in-side text-center" style="--delay: 1500ms;">
                     <h2 class="font-medium text-6xl">
                         Welcome to <span
                             class="font-semibold gold-text"
                             >ICDS</span
                         >
                     </h2>
-                </div>
+                </div> -->
             </section>
 
             <section class="py-10">
@@ -65,7 +67,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
         <script>
             const fadeInElements = document.querySelectorAll(".fade-in-side");
-            console.log("ok", fadeInElements);
 
             const fadeInObserver = new IntersectionObserver(
                 (entries) => {
@@ -73,7 +74,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                         if (entry.isIntersecting) {
                             entry.target.classList.add("faded-in-side");
                         } else {
-                            entry.target.classList.remove("faded-in-side");
+                            // entry.target.classList.remove("faded-in-side");
                         }
                     });
                 },
