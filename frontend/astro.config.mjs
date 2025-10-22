@@ -7,13 +7,19 @@ import prefetch from "@astrojs/prefetch";
 
 import svelte from "@astrojs/svelte";
 
+import vercel from '@astrojs/vercel';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
+
   integrations: [mdx(), sitemap(), prefetch({
     intentSelector: 'a[href]'
   }), astroImageTools, svelte()],
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: vercel(),
 });
