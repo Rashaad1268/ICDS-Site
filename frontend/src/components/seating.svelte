@@ -227,7 +227,6 @@
     {#if isLoading}
         <div class="flex flex-col items-center justify-center min-h-screen gap-4">
             <div class="text-amber-500 text-2xl animate-pulse">Loading seat availability...</div>
-            <div class="text-amber-400/60 text-sm">Checking reservations from Google Sheets</div>
         </div>
     {:else}
         <div class="max-w-7xl mx-auto">
